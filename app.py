@@ -72,10 +72,6 @@ st.set_page_config(
     layout="wide",
     page_icon="🚚",
 )
-
- st.sidebar.title("🏢 RS ISOLAMENTOS TÉRMICOS")
-
-
 LOGO_PATH = "empresa.png"
 
 if os.path.exists(LOGO_PATH):
