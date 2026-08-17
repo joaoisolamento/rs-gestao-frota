@@ -30,7 +30,7 @@ st.set_page_config(
 
 # Diretórios para anexos e logos
 for folder in ["uploads", "config"]:
-    if not os.path.exists(folder):
+    if not os.makedirs(folder, exist_ok=True)
         os.makedirs(folder)
 
 LOGO_PATH = os.path.join("config", "logo_empresa.png")
