@@ -72,10 +72,6 @@ st.set_page_config(
     layout="wide",
     page_icon="🚚",
 )
-
-LOGO_PATH = os.path.join("config", "empresa.png")
-
-
 LOGO_PATH = "empresa.png"
 
 if os.path.exists(LOGO_PATH):
