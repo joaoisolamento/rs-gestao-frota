@@ -75,6 +75,15 @@ st.set_page_config(
 
 LOGO_PATH = os.path.join("config", "empresa.png")
 
+
+LOGO_PATH = "empresa.png"
+
+if os.path.exists(LOGO_PATH):
+    st.sidebar.image(LOGO_PATH, use_container_width=True)
+else:
+    st.sidebar.title("🏢 RS ISOLAMENTOS TÉRMICOS")
+
+
 # CORES OFICIAIS DA RS ISOLAMENTOS TÉRMICOS
 COR_AZUL_RS = colors.HexColor("#002B66")
 COR_LARANJA_RS = colors.HexColor("#E86C15")
