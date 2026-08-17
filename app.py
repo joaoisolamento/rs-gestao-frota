@@ -2,7 +2,10 @@ import json
 import os
 import sqlite3
 from datetime import datetime
+import veiculos
 
+# Inicializa as tabelas na nuvem automaticamente ao abrir o app
+veiculos.inicializar_bd()
 import pandas as pd
 import streamlit as st
 from reportlab.lib import colors
