@@ -73,10 +73,6 @@ st.set_page_config(
     page_icon="🚚",
 )
 
-# Diretórios para anexos e logos
-for folder in ["uploads", "config"]:
-    os.makedirs(folder, exist_ok=True)
-
 LOGO_PATH = os.path.join("config", "empresa.png")
 
 # CORES OFICIAIS DA RS ISOLAMENTOS TÉRMICOS
