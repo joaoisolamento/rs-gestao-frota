@@ -77,7 +77,7 @@ st.set_page_config(
 for folder in ["uploads", "config"]:
     os.makedirs(folder, exist_ok=True)
 
-LOGO_PATH = os.path.join("config", "logo_empresa.png")
+LOGO_PATH = os.path.join("config", "empresa.png")
 
 # CORES OFICIAIS DA RS ISOLAMENTOS TÉRMICOS
 COR_AZUL_RS = colors.HexColor("#002B66")
