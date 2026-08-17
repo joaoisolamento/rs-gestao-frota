@@ -737,7 +737,7 @@ def gerar_pdf_frota(df_frota):
     doc.build(elements)
     return nome_pdf
 
-
+st.sidebar.markdown("### 🏢 RS ISOLAMENTOS TÉRMICOS")
 
 st.sidebar.markdown("---")
 menu = st.sidebar.selectbox(
