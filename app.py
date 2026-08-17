@@ -4,6 +4,51 @@ import sqlite3
 from datetime import datetime
 import veiculos
 
+import streamlit as st
+
+
+def checar_senha():
+    """Retorna True se o usuário digitou a senha correta."""
+
+    def senha_digitada():
+        if st.session_state["username"] in st.secrets[
+            "passwords"
+        ] and st.session_state["password"] == st.secrets["passwords"].get(
+            st.session_state["username"]
+        ):
+            st.session_state["password_correct"] = True
+            del st.session_state["password"]  # Limpa a senha da memória
+            del st.session_state["username"]
+        else:
+            st.session_state["password_correct"] = False
+
+    if "password_correct" not in st.session_state:
+        # Primeira execução: exibe tela de login
+        st.title("🔒 Acesso ao Sistema - RS Isolamentos")
+        st.text_input("Usuário", key="username")
+        st.text_input("Senha", type="password", key="password")
+        st.button("Entrar", on_click=senha_digitada)
+        return False
+    elif not st.session_state["password_correct"]:
+        # Senha incorreta
+        st.title("🔒 Acesso ao Sistema - RS Isolamentos")
+        st.text_input("Usuário", key="username")
+        st.text_input("Senha", type="password", key="password")
+        st.button("Entrar", on_click=senha_digitada)
+        st.error("😕 Usuário ou senha incorretos.")
+        return False
+    else:
+        # Senha correta
+        return True
+
+
+# --- BLOQUEIO DE SEGURANÇA ---
+if not checar_senha():
+    st.stop()  # Interrompe a execução aqui até fazer o login correto
+
+# --- SEU CÓDIGO DO APP COMEÇA AQUI ---
+# (Manter o restante do app.py normalmente)
+
 # Inicializa as tabelas na nuvem automaticamente ao abrir o app
 veiculos.inicializar_bd()
 import pandas as pd
