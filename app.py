@@ -738,10 +738,6 @@ def gerar_pdf_frota(df_frota):
     return nome_pdf
 
 
-# --- INTERFACE PRINCIPAL ---
-st.sidebar.markdown("### 🏢 RS ISOLAMENTOS TÉRMICOS")
-if os.path.exists(LOGO_PATH):
-    st.sidebar.image(LOGO_PATH, use_container_width=True)
 
 st.sidebar.markdown("---")
 menu = st.sidebar.selectbox(
